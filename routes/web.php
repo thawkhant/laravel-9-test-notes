@@ -40,7 +40,7 @@ Route::get("contact",function(){
 
 // Route::view('URI','View','Parameter');
 
-Route::view('about','about',['message' => "This is really important message"])->name('aboutt');   // super easy
+Route::view('about','about',['name' => "Thaw Khant",'message' => "This is really important message", "fruits" => ['mango','apple','oragne','grape']])->name('aboutt');   // super easy
 
 Route::view('/support/help/service','service')->name('ser');
 
@@ -76,6 +76,15 @@ Route::get("/customer/{name}/register/{job}",function($name,$job){
 Route::get("/customer/{name?}/{job?}",function($name = "thaw khant",$job = "Developer"){
     return "customer name is ". $name . " and he is " . $job;
 });
+
+Route::get("resultPage/{num1}/{num2}",function($num1,$num2){
+    $myresult = $num1 + $num2;
+    return view('result',['result'=> $myresult]);
+})->name('mycalculation');
+
+Route::get("paraPass/{name?}",function($myname = "your name is empty"){
+    return $myname;
+})->name('passWithroute');
 
 
 
