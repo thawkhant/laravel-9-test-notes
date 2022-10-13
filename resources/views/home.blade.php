@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">  <!-- public ka link -->
-	</head>
-	<body>
+@extends('./layouts.main')
 
-		<a href="{{url('home')}}">Home</a> |
-		<a href="{{route('aboutt')}}">About</a> |
-		<a href="{{url('contact')}}">Contact</a>
-		<a href="{{url('customer')}}">Customer</a>
-        <!-- <a href="{{url('support/help/service')}}">Service</a> -->
-        <a href="{{route('ser')}}">Service</a>
-		<hr/>
-		<!--  {{ url("home")}} |           // url ko pya pay dal
+@section('myContent')
+
+<a href="{{url('postTest')}}">POST method test</a>   <!-- error -->
+
+<!--  {{ url("home")}} |           // url ko pya pay dal
 		{{ url('about')}} |
 		{{ url("contact")}} -->
 		<h1 style="color:red">This is Home Page</h1>
@@ -32,7 +21,16 @@
          <br/><br/>
         <img src="{{asset('image/profile.webp')}}" width="300px">
 
+   @endsection
 
-	</body>
-	<script src="{{asset('js/app.js')}}" type="text/javascript"></script>
-</html>
+   @section('footer')
+ <h1>This is footer tesing</h1>
+   <p style="color: green;">lorem ipsum is type scripting languag eand everyone know about thaw alkhasdf . adthawdkj athaw khknl</p>
+   @endsection
+  
+  @push("myJs")        //stack method nat pay htar lot stack net pyan call ya dr
+   <script type="text/javascript">
+   	// alert("XSS")
+   </script>
+   @endpush
+
