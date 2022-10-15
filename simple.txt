@@ -1,0 +1,18 @@
+laravel laws
+
+1. > a myar kane pyint ya ml
+2. create_customers_table
+
+  php artisan make:migration create_customers_table
+
+  ------------------------------------------------------------
+  php artisan migrate    // upload
+
+  php artisan migrage:status  // checking about table lists
+
+  php aritsan make:migeration create_customers_table   // create table
+
+  php artisan migrate:rollback (delete => step by step by step)
+   { state1 > state2 > state3 > | rollback }
+
+  php artisan migrate:fresh (down + up)
