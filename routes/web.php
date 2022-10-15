@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;  // Default par dal
 use Illuminate\Support\Facades\Http;   // line 132 mar use htar dal
 use Illuminate\Http\Request;  // for Request method
+use App\Http\Controllers\CustomerController;   // input loke pay dar
 
 Route::get('/', function () {
     return view("welcome");   // view is from resources / welcome.blad.php
@@ -175,3 +176,17 @@ Route::post('postTest/{id}/{name}',function(Request $req,$id,$name){
 
     dd($req->all(),$userData,$id,$name);   // data ko 2 ku phan lite dar as we like pr bya
 })->name('customerPostTest');
+
+
+
+// Route::get("customerRegister",'CustomerController@register');   laravel 5,6,7 version
+
+// Route::get('customerRegister',[CustomerController::class,'register']);
+
+
+
+// customer controller
+                         // twar ya mal route     / loke ya ml function
+ Route::get('helloTest',[CustomerController::class,'outputHello']);
+
+ Route::get('compact/list',[CustomerController::class,'compactlist']);
