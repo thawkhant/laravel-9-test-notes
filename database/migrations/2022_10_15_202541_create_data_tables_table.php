@@ -24,6 +24,7 @@ return new class extends Migration
              $table->timestamp('release_date');
              $table->float('amount')->default(10000);
              $table->integer('votes');
+             $table->bigInteger('myvoting');
              $table->text('description');   // string net text ka tuu dal sir
              $table->string('myText');    // 255
              $table->mediumText('myTextMedium');

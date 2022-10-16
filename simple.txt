@@ -16,3 +16,44 @@ laravel laws
    { state1 > state2 > state3 > | rollback }
 
   php artisan migrate:fresh (down + up)
+
+
+  ----------------------------------------
+
+
+
+    Customer => Table + Model + Controller + View (MVC)
+   
+    php artisan make:migration create_customers_table (Table)
+
+    php artisan make:model Customer ( Model )
+
+    php artisan make:controller CustomerController (Controller)
+
+    php artisan make:model Customer -mc  (migration and controller par twal build twar dar)
+
+
+    -----------------------------------------
+
+    Query Builder Vs Elequent
+
+
+    Raw Query
+
+    SELECT * FROM where
+    INSERT INTO value
+    delete from where
+    update set where
+
+    SELECT * FROM customer
+
+    $customer->all();
+
+
+
+    ---------------------------------------------------------
+    Code Lab sir note
+
+    customer_name    // _ underscore so yin database htal ka data
+
+    customerName   // yo yo data

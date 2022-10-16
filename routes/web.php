@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;  // Default par dal
 use Illuminate\Support\Facades\Http;   // line 132 mar use htar dal
 use Illuminate\Http\Request;  // for Request method
-use App\Http\Controllers\CustomerController;   // input loke pay dar
+use App\Http\Controllers\CustomerController;   // import loke pay dar
+use App\Http\Controllers\CustomerrController;
 
 Route::get('/', function () {
     return view("welcome");   // view is from resources / welcome.blad.php
@@ -190,3 +191,12 @@ Route::post('postTest/{id}/{name}',function(Request $req,$id,$name){
  Route::get('helloTest',[CustomerController::class,'outputHello']);
 
  Route::get('compact/list',[CustomerController::class,'compactlist']);
+
+
+
+
+ // ---------------------------------------------------------------
+
+ Route::get('customerr/home',[CustomerrController::class,'abc'])->name('customer#home');
+ Route::post('customerr/insert',[CustomerrController::class,'xyz'])->name("customer#insert");
+ Route::get('customerr/read',[CustomerrController::class,'read'])->name('customer#red');
